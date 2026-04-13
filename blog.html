@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - JujuyTurismo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <button id="dark-mode-toggle" class="btn-tema">
+                <span class="icono-sol">☀️</span>
+                <span class="icono-luna">🌙</span>
+            </button>
+            <div class="logo">JujuyTurismo</div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li class="dropdown"> <a href="destinos.html">Destinos ▼</a>
+
+                    <div class="mega-menu">
+                        <div class="columna">
+                            <h3>Norte</h3>
+                            <a href="destinos.html#religion">Purmamarca</a>
+                            <a href="destinos.html#gastro">Tilcara</a>
+                        </div>
+                        <div class="columna">
+                            <h3>Yungas</h3>
+                            <a href="destinos.html#natura">Calilegua</a>
+                            <a href="destinos.html#natura">Ledesma</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="agencias.html">Agencias ▼</a>
+                    <div class="mega-menu">
+                        <div class="columna">
+                            <h3>Locales</h3>
+                            <a href="#">Jujuy Travel</a>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Precios ▼</a>
+                    <div class="mega-menu">
+                        <div class="columna">
+                            <h3>Paquetes</h3>
+                            <a href="#">Económico</a>
+                            <a href="#">Premium</a>
+                        </div>
+                        <div class="columna">
+                            <h3>Servicios</h3>
+                            <a href="#">Hotelería</a>
+                            <a href="#">Excursiones</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="pagina-blog">
+        <h1 class="titulo-revista">Crónicas de Jujuy</h1>
+
+        <div class="filtro-tags">
+            <input type="radio" name="tag-blog" id="tag-todos" checked>
+            <label for="tag-todos">Todos</label>
+
+            <input type="radio" name="tag-blog" id="tag-aventura">
+            <label for="tag-aventura">#Aventura</label>
+
+            <input type="radio" name="tag-blog" id="tag-cultura">
+            <label for="tag-cultura">#Cultura</label>
+        </div>
+
+        <section class="grid-noticias">
+            <article class="post destacado cat-cultura reveal">
+                <div class="post-img"><img src="img/purmamarca2.jpg" alt="Purmamarca"></div>
+                <div class="post-content">
+                    <span class="tag">Cultura</span>
+                    <h2>El amanecer en el Cerro de los Siete Colores</h2>
+                    <p>Una experiencia mística que conecta el pasado incaico con el presente...</p>
+                </div>
+            </article>
+
+            <article class="post lateral cat-aventura reveal">
+                <div class="post-content">
+                    <span class="tag">Aventura</span>
+                    <h3>Trekking en las Nubes</h3>
+                    <p>Explorando los senderos vírgenes de Santa Ana.</p>
+                </div>
+            </article>
+
+            <article class="post lateral cat-cultura reveal">
+                <div class="post-content">
+                    <span class="tag">Cultura</span>
+                    <h3>Sabores de la Quebrada</h3>
+                    <p>El secreto detrás del mejor tamal jujeño.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="comentarios reveal">
+            <h3>Comunidad Viajera</h3>
+            <div class="comentario-item">
+                <div class="avatar-css"></div>
+                <div class="texto-com">
+                    <strong>@JuanViajero</strong>
+                    <p>¡Increíble artículo! Calilegua me cambió la vida.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Suscríbete</h3>
+                <p>Recibe las mejores ofertas para viajar a Jujuy.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Ubicación</h3>
+                <div class="mapa-embebido">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14559.34444535316!2d-65.3113543!3d-24.1837748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d7718915865d5%3A0xc3f345339665f80!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712780000000!5m2!1ses!2sar"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Turismo Jujuy - Facultad de Ingeniería UNJu</p>
+        </div>
+    </footer>
+<script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+const scrollReveal = () => {
+    revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+};
+
+window.addEventListener('scroll', scrollReveal);
+// Ejecutar una vez al cargar por si ya hay elementos visibles
+window.onload = scrollReveal;
+</script>
+<script>
+    const btnTema = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    // 1. Revisar si el usuario ya tenía el modo oscuro activado antes
+    if (localStorage.getItem('tema') === 'oscuro') {
+        body.classList.add('dark-mode');
+    }
+
+    // 2. Escuchar el clic en el botón
+    btnTema.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        // 3. Guardar la preferencia
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('tema', 'oscuro');
+        } else {
+            localStorage.setItem('tema', 'claro');
+        }
+    });
+</script>
+</body>
+
+</html>
