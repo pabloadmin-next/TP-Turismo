@@ -975,6 +975,7 @@ body.dark-mode .icono-sol { display: block; }
     color: var(--color-texto);
 }
 html {
+    scroll-snap-type: y proximity; /* Menos agresivo que mandatory */
     scroll-behavior: smooth;
 }
 
