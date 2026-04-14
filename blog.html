@@ -65,51 +65,91 @@
     <main class="pagina-blog">
         <h1 class="titulo-revista">Crónicas de Jujuy</h1>
 
+        <input type="radio" name="tag-blog" id="tag-todos" checked>
+        <input type="radio" name="tag-blog" id="tag-aventura">
+        <input type="radio" name="tag-blog" id="tag-cultura">
+
         <div class="filtro-tags">
-            <input type="radio" name="tag-blog" id="tag-todos" checked>
             <label for="tag-todos">Todos</label>
-
-            <input type="radio" name="tag-blog" id="tag-aventura">
-            <label for="tag-aventura">#Aventura</label>
-
-            <input type="radio" name="tag-blog" id="tag-cultura">
-            <label for="tag-cultura">#Cultura</label>
+            <label for="tag-aventura">Aventura</label>
+            <label for="tag-cultura">Cultura</label>
         </div>
 
-        <section class="grid-noticias">
-            <article class="post destacado cat-cultura reveal">
-                <div class="post-img"><img src="img/purmamarca2.jpg" alt="Purmamarca"></div>
-                <div class="post-content">
-                    <span class="tag">Cultura</span>
-                    <h2>El amanecer en el Cerro de los Siete Colores</h2>
-                    <p>Una experiencia mística que conecta el pasado incaico con el presente...</p>
-                </div>
-            </article>
+       <section class="grid-noticias">
+            <div class="columna-principal">
+                <article class="post destacado cat-cultura reveal">
+                    <div class="post-img"><img src="img/purmamarca2.jpg" alt="Purmamarca"></div>
+                    <div class="post-content">
+                        <span class="tag">Cultura</span>
+                        <h2>El amanecer en el Cerro de los Siete Colores</h2>
+                        <p>Una experiencia mística que conecta el pasado incaico con el presente. Recorrimos las callecitas de tierra descubriendo artesanos locales.</p>
+                    </div>
+                </article>
 
-            <article class="post lateral cat-aventura reveal">
-                <div class="post-content">
-                    <span class="tag">Aventura</span>
-                    <h3>Trekking en las Nubes</h3>
-                    <p>Explorando los senderos vírgenes de Santa Ana.</p>
-                </div>
-            </article>
+                <article class="post destacado cat-aventura reveal">
+                    <div class="post-img"><img src="img/hornocal.webp" alt="Serranía del Hornocal"></div>
+                    <div class="post-content">
+                        <span class="tag">Aventura</span>
+                        <h2>Expedición a los 4300 metros: El Hornocal</h2>
+                        <p>El camino es sinuoso, pero llegar al mirador de los 14 colores es una aventura que te corta el aliento.</p>
+                    </div>
+                </article>
+            </div>
 
-            <article class="post lateral cat-cultura reveal">
-                <div class="post-content">
-                    <span class="tag">Cultura</span>
-                    <h3>Sabores de la Quebrada</h3>
-                    <p>El secreto detrás del mejor tamal jujeño.</p>
-                </div>
-            </article>
+            <div class="columna-secundaria">
+                <article class="post lateral cat-aventura reveal">
+                    <div class="post-img"><img src="img/calilegua.jpg" alt="Trekking"></div>
+                    <div class="post-content">
+                        <span class="tag">Aventura</span>
+                        <h3>Trekking en las Nubes</h3>
+                        <p>Explorando los senderos vírgenes de Santa Ana y la selva de montaña.</p>
+                    </div>
+                </article>
+
+                <article class="post lateral cat-cultura reveal">
+                    <div class="post-img"><img src="img/gastronomia.webp" alt="Tamales"></div>
+                    <div class="post-content">
+                        <span class="tag">Cultura</span>
+                        <h3>Sabores de la Quebrada</h3>
+                        <p>El secreto detrás del mejor tamal jujeño y las humitas al plato.</p>
+                    </div>
+                </article>
+                
+                <article class="post lateral cat-cultura reveal">
+                    <div class="post-img"><img src="img/uquia.webp" alt="Uquía"></div>
+                    <div class="post-content">
+                        <span class="tag">Cultura</span>
+                        <h3>Fiesta en Uquía</h3>
+                        <p>La tradicional bajada de los diablos, un evento único en el mundo.</p>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section class="comentarios reveal">
-            <h3>Comunidad Viajera</h3>
+            <h3>Comunidad Viajera (3)</h3>
+            
             <div class="comentario-item">
                 <div class="avatar-css"></div>
                 <div class="texto-com">
                     <strong>@JuanViajero</strong>
-                    <p>¡Increíble artículo! Calilegua me cambió la vida.</p>
+                    <p>¡Increíble artículo! Calilegua me cambió la vida, totalmente recomendado para ir en invierno.</p>
+                </div>
+            </div>
+
+            <div class="comentario-item">
+                <div class="avatar-css"></div>
+                <div class="texto-com">
+                    <strong>@MartaExplora</strong>
+                    <p>Fui al Hornocal el año pasado con Jujuy Travel, tal cual lo cuentan. ¡Es una belleza que no parece real!</p>
+                </div>
+            </div>
+
+            <div class="comentario-item">
+                <div class="avatar-css"></div>
+                <div class="texto-com">
+                    <strong>@LucasNorte</strong>
+                    <p>Excelente la data gastronómica, no sabía ese secreto de la masa de los tamales. ¡Voy a probar hacerlo este finde!</p>
                 </div>
             </div>
         </section>
@@ -148,45 +188,45 @@
             <p>&copy; 2026 Turismo Jujuy - Facultad de Ingeniería UNJu</p>
         </div>
     </footer>
-<script>
-    const revealElements = document.querySelectorAll('.reveal');
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
 
-const scrollReveal = () => {
-    revealElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
-            el.classList.add('active');
+        const scrollReveal = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', scrollReveal);
+        // Ejecutar una vez al cargar por si ya hay elementos visibles
+        window.onload = scrollReveal;
+    </script>
+    <script>
+        const btnTema = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // 1. Revisar si el usuario ya tenía el modo oscuro activado antes
+        if (localStorage.getItem('tema') === 'oscuro') {
+            body.classList.add('dark-mode');
         }
-    });
-};
 
-window.addEventListener('scroll', scrollReveal);
-// Ejecutar una vez al cargar por si ya hay elementos visibles
-window.onload = scrollReveal;
-</script>
-<script>
-    const btnTema = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+        // 2. Escuchar el clic en el botón
+        btnTema.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
 
-    // 1. Revisar si el usuario ya tenía el modo oscuro activado antes
-    if (localStorage.getItem('tema') === 'oscuro') {
-        body.classList.add('dark-mode');
-    }
-
-    // 2. Escuchar el clic en el botón
-    btnTema.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // 3. Guardar la preferencia
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('tema', 'oscuro');
-        } else {
-            localStorage.setItem('tema', 'claro');
-        }
-    });
-</script>
+            // 3. Guardar la preferencia
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('tema', 'oscuro');
+            } else {
+                localStorage.setItem('tema', 'claro');
+            }
+        });
+    </script>
 </body>
 
 </html>
