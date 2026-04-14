@@ -484,8 +484,17 @@ input[name="filtro"] {
 
 /* Repites lo mismo para #gastro y #natura */
 #gastro:target ~ .galeria-masonry .cat-gastro,
-#gastro:target ~ .descripciones .cat-gastro {
+#gastro:target ~ .descripciones .cat-gastro
+#gastro:target ~ .seccion-tabla .cat-gastro {
     display: block !important;
+}
+#gastro:target ~ .seccion-tabla .fila-precio.cat-gastro {
+    display: table-row !important;
+}
+
+/* Ocultamos lo que no corresponde cuando hay un target específico */
+#gastro:target ~ .galeria-masonry .card-m:not(.cat-gastro) {
+    display: none;
 }
 
 /* --- PAGINA AGENCIAS: ESPACIADO PRINCIPAL --- */
@@ -1116,4 +1125,18 @@ input[name="tag-blog"] { display: none; }
     .grid-noticias { 
         grid-template-columns: 1fr; 
     }
+  }
+html {
+    scroll-behavior: smooth;
+}
+
+/* Opcional: Resaltar el formulario cuando llegamos a él */
+#seccion-formulario:target {
+    animation: resaltar 1.5s ease;
+}
+
+@keyframes resaltar {
+    0% { transform: scale(1); }
+    50% { box-shadow: 0 0 20px var(--color-secundario); }
+    100% { transform: scale(1); }
 }
